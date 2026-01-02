@@ -19,10 +19,8 @@ technical drawings.
 
 ## Requirements
 
-- Python 3.8+
-- FreeCAD 0.19+ (with Python API)
-- NumPy >= 1.20.0
-- Matplotlib >= 3.4.0
+- Python 3.11
+- Freecad 1.0.0
 
 ## Installation
 
@@ -32,9 +30,13 @@ git clone https://github.com/your-org/ai-drafting-agent.git
 cd ai-drafting-agent
 
 # Install Python dependencies
-pip install numpy matplotlib
+conda env create -f environment.yml
+'''
+###
+'''bash
 
 freecadcmd main.py <input.step> <output_name>
+'''
 
 ## How to use
 
@@ -50,15 +52,7 @@ freecadcmd main.py housing.iges housing_drawing
 #   - bracket_drawing.png    (Preview image)
 
 
-## how to agent
-
-from main import AIDraftingAgent
-
-agent = AIDraftingAgent()
-results = agent.run("input.step", "output_drawing")
-
-print(f"Created {results['dimensions_techdraw']} TechDraw dimensions")
-print(f"Created {results['dimensions_pdf']} PDF dimensions")
+```bash
 
 ##expected output files
 
@@ -72,16 +66,10 @@ File	Description
 ai_drafting_agent/
 ├── README.md        # This file - documentation and architecture
 ├── main.py          # Entry point, CLI, and main Agent class
-├── core.py          # Data structures, geometry analysis, utilities
-└── generators.py    # TechDraw and PDF rendering engines
+├── machine_part.STEP  # input data
+└──environment.yml   # for installations
 
-##Module Descriptions
-Module	Purpose
-main.py	CLI parsing, validation, orchestrates the complete pipeline
-core.py	Data models, geometry analyzer, title block generator, config
-generators.py	TechDraw dimension strategies, view projection, PDF rendering
 
-### pipleline
 
 ┌─────────────────────────────────────────────────────────────────┐
 │                        INPUT STAGE                               │
