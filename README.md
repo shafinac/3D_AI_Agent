@@ -31,9 +31,8 @@ cd ai-drafting-agent
 
 # Install Python dependencies
 conda env create -f environment.yml
+
 '''
-###
-'''bash
 
 freecadcmd main.py <input.step> <output_name>
 '''
@@ -41,9 +40,11 @@ freecadcmd main.py <input.step> <output_name>
 ## How to use
 
 # Process a STEP file
+
 freecadcmd main.py bracket.step bracket_drawing
 
-# Process an IGES file  
+# Process an IGES file
+
 freecadcmd main.py housing.iges housing_drawing
 
 # Output files created:
@@ -52,7 +53,6 @@ freecadcmd main.py housing.iges housing_drawing
 #   - bracket_drawing.png    (Preview image)
 
 
-```bash
 
 ##expected output files
 
