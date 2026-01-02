@@ -21,6 +21,7 @@ technical drawings.
 
 - Python 3.11
 - Freecad 1.0.0
+- Conda
 
 ## Installation
 
@@ -31,7 +32,9 @@ cd ai-drafting-agent
 
 # Install Python dependencies
 conda env create -f environment.yml
+conda activate ai_drafting_agent
 
+# To run the main code:
 '''
 
 freecadcmd main.py <input.step> <output_name>
